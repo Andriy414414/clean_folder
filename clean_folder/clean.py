@@ -130,7 +130,7 @@ def handle_folder(folder: Path):
     except OSError:
         print(f"Can't delete folder: {folder}")
 
-def main(folder: Path):
+def main_2(folder: Path):
     scan(folder)
     for file in JPEG_IMAGES:
         handle_media(file, folder / 'images' / 'JPEG')
@@ -164,8 +164,8 @@ def main(folder: Path):
     for folder in FOLDERS[::-1]:
         handle_folder(folder)
 
-def start():
+def main():
     if sys.argv[1]:
         folder_for_scan = Path(sys.argv[1])
         print(f'Start in folder: {folder_for_scan.resolve()}')
-        main(folder_for_scan.resolve())   
+        main_2(folder_for_scan.resolve())   
